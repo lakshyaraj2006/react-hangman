@@ -12,7 +12,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const incorrectLetters = guessedLetters.filter(letter => !wordToGuess.includes(letter));
 
-  const isLoser = incorrectLetters.length >= wordToGuess.length;
+  const isLoser = incorrectLetters.length >= 6;
   const isWinner = wordToGuess.split("").every(letter => guessedLetters.includes(letter));
 
   const addGuessedLetter = useCallback((letter: string) => {
